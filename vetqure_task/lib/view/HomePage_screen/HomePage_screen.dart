@@ -53,12 +53,16 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                   "Name",
                                   style: TextStyle(
                                       fontSize: 24,
-                                      fontWeight: FontWeight.w600,color: Colors.white),
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
                                 ),
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Icon(Icons.edit,color: Colors.white,)
+                                Icon(
+                                  Icons.edit,
+                                  color: Colors.white,
+                                )
                               ],
                             )
                           ],
@@ -346,19 +350,17 @@ class _HomepageScreenState extends State<HomepageScreen> {
                               Expanded(
                                 flex: 40,
                                 child: Container(
-                                  
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-                                          color: Colors.white,
-                                    borderRadius: BorderRadius.circular(14)
-                                  ),
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(14)),
                                         width: widthSize / 1.8,
                                         height: heightSize / 1,
-                                        
                                         child: Column(
                                           children: [
                                             Padding(
@@ -416,7 +418,6 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      
                                                       child: Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -440,7 +441,6 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      
                                                       child: Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -463,9 +463,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                                         FontWeight
                                                                             .w700),
                                                               ),
-                                                              Icon(Icons
-                                                                  .arrow_downward_outlined,color: Colors.red,),
-                                                              Text("20%",style: TextStyle(color: Colors.red),),
+                                                              Icon(
+                                                                Icons
+                                                                    .arrow_downward_outlined,
+                                                                color:
+                                                                    Colors.red,
+                                                              ),
+                                                              Text(
+                                                                "20%",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .red),
+                                                              ),
                                                             ],
                                                           ),
                                                           Text("New Client"),
@@ -475,7 +484,6 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      
                                                       child: Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -498,9 +506,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                                         FontWeight
                                                                             .w700),
                                                               ),
-                                                              Icon(Icons
-                                                                  .arrow_downward_outlined,color: Colors.red,),
-                                                              Text("20%",style: TextStyle(color: Colors.red),),
+                                                              Icon(
+                                                                Icons
+                                                                    .arrow_downward_outlined,
+                                                                color:
+                                                                    Colors.red,
+                                                              ),
+                                                              Text(
+                                                                "20%",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .red),
+                                                              ),
                                                             ],
                                                           ),
                                                           Text("New Client"),
@@ -654,9 +671,9 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                         width: widthSize / 5,
                                         height: heightSize / 1,
                                         decoration: BoxDecoration(
-                                          color: Colors.white,
-                                    borderRadius: BorderRadius.circular(14)
-                                  ),
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(14)),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -786,6 +803,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                         child: Container(
                           child: Row(
                             children: [
+                              // You can uncomment this part if you need a left placeholder
                               // Expanded(
                               //   flex: 1,
                               //   child: Container(
@@ -793,12 +811,19 @@ class _HomepageScreenState extends State<HomepageScreen> {
                               //   ),
                               // ),
                               Expanded(
-                                flex: 35,
+                                flex: 25,
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 39),
+                                  padding: const EdgeInsets.only(
+                                      left: 40,
+                                      right: 35
+                                      ), // Adjust left and right padding
                                   child: Container(
-                                    color: Colors.white,
-                                    width: widthSize / 1.5,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(14)
+                                    ),
+                                    width: widthSize/1.3,
+                                    
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -806,17 +831,20 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Text(
                                             "Revenue BreakDown",
                                             style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 16),
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 16,
+                                            ),
                                           ),
                                         ),
                                         Container(
-                                          width: widthSize / 1.2,
+                                          width: widthSize/1.3, // Use double.infinity for full width
                                           height: heightSize / 11,
+                                          
                                           child: ListView.builder(
                                             scrollDirection: Axis.horizontal,
                                             itemCount: 5,
@@ -826,83 +854,86 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                               double remainingValue = 100 -
                                                   value; // Remaining value (40%)
 
-                                              return Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                    width: widthSize / 6,
-                                                    height: heightSize / 10,
-                                                    child: Stack(
-                                                      alignment:
-                                                          Alignment.center,
+                                              return Padding(
+                                                padding: const EdgeInsets
+                                                    .symmetric(
+                                                    
+                                                    horizontal:
+                                                        50), // Add padding for spacing between pie charts
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                                  children: [
+                                                    Container(
+                                                      
+                                                      width: widthSize /
+                                                          16, // Reduced width of pie chart container
+                                                      height: heightSize / 10,
+                                                      child: Stack(
+                                                        alignment: Alignment.center,
+                                                        children: [
+                                                          PieChart(
+                                                            PieChartData(
+                                                              sectionsSpace: 0,
+                                                              centerSpaceRadius: 30,
+                                                              sections: [
+                                                                // Filled portion (e.g., 60%)
+                                                                PieChartSectionData(
+                                                                  value: value,
+                                                                  color:
+                                                                      Colors.purple,
+                                                                  radius: 13,
+                                                                  title: '',
+                                                                ),
+                                                                // Remaining portion (e.g., 40%)
+                                                                PieChartSectionData(
+                                                                  value:
+                                                                      remainingValue,
+                                                                  color: Colors
+                                                                      .grey, // Set the color for the remaining portion
+                                                                  radius: 13,
+                                                                  title: '',
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          // Text placed at the center
+                                                          Text(
+                                                            '$value%', // Display the percentage value (60%)
+                                                            style: TextStyle(
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight.bold,
+                                                              color: Colors.black,
+                                                            ),
+                                                          ),
+                                                          
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
-                                                        PieChart(
-                                                          PieChartData(
-                                                            sectionsSpace: 0,
-                                                            centerSpaceRadius:
-                                                                30,
-                                                            sections: [
-                                                              // Filled portion (e.g., 60%)
-                                                              PieChartSectionData(
-                                                                value: value,
-                                                                color: Colors
-                                                                    .purple,
-                                                                radius: 13,
-                                                                title: '',
-                                                              ),
-                                                              // Remaining portion (e.g., 40%)
-                                                              PieChartSectionData(
-                                                                value:
-                                                                    remainingValue,
-                                                                color: Colors
-                                                                    .grey, // Set the color for the remaining portion
-                                                                radius: 13,
-                                                                title: '',
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                        // Text placed at the center
                                                         Text(
-                                                          '$value%', // Display the percentage value (60%)
+                                                          "10000",
                                                           style: TextStyle(
-                                                            fontSize: 16,
+                                                            fontSize: 20,
                                                             fontWeight:
-                                                                FontWeight.bold,
-                                                            color: Colors.black,
+                                                                FontWeight
+                                                                    .w600,
                                                           ),
                                                         ),
-                                                        Positioned(
-                                                          left: 220,
-                                                          child: Column(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Text(
-                                                                "10000",
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        20,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600),
-                                                              ),
-                                                              Text("data"),
-                                                            ],
-                                                          ),
-                                                        )
+                                                        Text("data"),
                                                       ],
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               );
                                             },
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -1110,14 +1141,15 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                                          child: Text(
-                                            "Recent Orders",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 16),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 25),
+                                            child: Text(
+                                              "Recent Orders",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 16),
+                                            ),
                                           ),
-                                        ),
                                           Container(
                                             width: widthSize / 1,
                                             height: heightSize / 3.5,
@@ -1134,7 +1166,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                       children: [
                                                         CircleAvatar(
                                                           radius: 32,
-                                                          child: Icon(Icons.person_2_outlined),
+                                                          child: Icon(Icons
+                                                              .person_2_outlined),
                                                         ),
                                                         Column(
                                                           children: [
@@ -1156,7 +1189,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                             color:
                                                                 Colors.purple,
                                                           ),
-                                                          child: Center(child: Text("data")),
+                                                          child: Center(
+                                                              child: Text(
+                                                            "data",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          )),
                                                         ),
                                                         SizedBox(
                                                           width: 10,
@@ -1185,14 +1224,15 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                                          child: Text(
-                                            "Revenue BreakDown",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 16),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 25),
+                                            child: Text(
+                                              "Revenue BreakDown",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 16),
+                                            ),
                                           ),
-                                        ),
                                           Container(
                                             width: widthSize / 1,
                                             height: heightSize / 3.5,
@@ -1209,7 +1249,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                       children: [
                                                         CircleAvatar(
                                                           radius: 32,
-                                                          child: Icon(Icons.person_2_outlined),
+                                                          child: Icon(Icons
+                                                              .person_2_outlined),
                                                         ),
                                                         Column(
                                                           children: [
@@ -1231,7 +1272,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                             color:
                                                                 Colors.purple,
                                                           ),
-                                                          child: Center(child: Text("data")),
+                                                          child: Center(
+                                                              child: Text(
+                                                            "data",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          )),
                                                         ),
                                                         SizedBox(
                                                           width: 10,
