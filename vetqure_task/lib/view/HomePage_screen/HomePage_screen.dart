@@ -27,107 +27,108 @@ class _HomepageScreenState extends State<HomepageScreen> {
       body: SafeArea(
         child: Row(
           children: [
-            // Yellow container takes less space (flex 1)
+            
             Expanded(
               flex: 1,
               child: Container(
                 color: const Color.fromARGB(255, 32, 6, 126),
                 child: Center(
-                    child: Column(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              radius: 50,
-                              child: Icon(Icons.person_2_outlined),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Name",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                )
-                              ],
-                            )
-                          ],
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                radius: 50,
+                                child: Icon(Icons.person_2_outlined),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Name",
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        child: ListView.builder(
-                          itemCount: buttonData.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 20.0, horizontal: 16.0),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  shape: LinearBorder(),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 10.0, horizontal: 16.0),
-                                  backgroundColor: selectedIndex == index
-                                      ? Colors
-                                          .white // Highlight selected button
-                                      : Colors
-                                          .transparent, // Transparent when unselected
-                                  shadowColor: Colors.transparent, // No shadow
-                                  side: BorderSide(
-                                      color: Colors
-                                          .white), // Add border for visibility
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    selectedIndex =
-                                        index; // Update selected button
-                                  });
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(
-                                      buttonData[index]["icon"],
-                                      color: selectedIndex == index
-                                          ? Colors
-                                              .black // Change icon color when selected
-                                          : Colors.white,
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      buttonData[index]["name"],
-                                      style: TextStyle(
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          child: ListView.builder(
+                            itemCount: buttonData.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 20.0, horizontal: 16.0),
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    shape: const LinearBorder(),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 16.0),
+                                    backgroundColor: selectedIndex == index
+                                        ? Colors
+                                            .white 
+                                        : Colors
+                                            .transparent, 
+                                    shadowColor:
+                                        Colors.transparent, 
+                                    side: const BorderSide(
+                                        color: Colors
+                                            .white), 
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      selectedIndex =
+                                          index; 
+                                    });
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        buttonData[index]["icon"],
                                         color: selectedIndex == index
                                             ? Colors
-                                                .black // Change text color when selected
+                                                .black 
                                             : Colors.white,
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(width: 10),
+                                      Text(
+                                        buttonData[index]["name"],
+                                        style: TextStyle(
+                                          color: selectedIndex == index
+                                              ? Colors
+                                                  .black 
+                                              : Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
+                      Expanded(
                         flex: 1,
                         child: Align(
                           alignment: Alignment.topLeft,
@@ -139,18 +140,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                   vertical: 20.0, horizontal: 16.0),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  shape: LinearBorder(),
+                                  shape: const LinearBorder(),
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 10.0, horizontal: 16.0),
-                                  backgroundColor: selectedIndex == false
+                                  backgroundColor: logout == false
                                       ? Colors
-                                          .white // Highlight selected button
+                                          .white 
                                       : Colors
-                                          .transparent, // Transparent when unselected
-                                  shadowColor: Colors.transparent, // No shadow
-                                  side: BorderSide(
+                                          .transparent, 
+                                  shadowColor: Colors.transparent, 
+                                  side: const BorderSide(
                                       color: Colors
-                                          .white), // Add border for visibility
+                                          .white), 
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -164,16 +165,16 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                       Icons.logout_outlined,
                                       color: logout == false
                                           ? Colors
-                                              .black // Change icon color when selected
+                                              .black 
                                           : Colors.white,
                                     ),
-                                    SizedBox(width: 10),
+                                    const SizedBox(width: 10),
                                     Text(
                                       'LogOUt',
                                       style: TextStyle(
                                         color: logout == false
                                             ? Colors
-                                                .black // Change text color when selected
+                                                .black 
                                             : Colors.white,
                                       ),
                                     ),
@@ -182,12 +183,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
                               ),
                             ),
                           ),
-                        )),
-                  ],
-                )),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-            // Blue container balances the remaining space (flex 2)
+            
             Expanded(
               flex: 5,
               child: Container(
@@ -203,8 +206,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                             Expanded(
                               flex: 3,
                               child: Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 30),
+                                child: const Padding(
+                                  padding: EdgeInsets.only(left: 30),
                                   child: Text(
                                     "Tittle",
                                     style: TextStyle(
@@ -223,7 +226,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      // Three buttons with icons
+                                      
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceEvenly,
@@ -236,7 +239,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     color: Colors.black),
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            child: Row(
+                                            child:const Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
@@ -246,7 +249,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(
+                                        const  SizedBox(
                                             width: 10,
                                           ),
                                           Container(
@@ -257,7 +260,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     color: Colors.black),
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            child: Row(
+                                            child:const Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
@@ -266,7 +269,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(
+                                         const SizedBox(
                                             width: 10,
                                           ),
                                           Container(
@@ -277,7 +280,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     color: Colors.black),
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            child: Row(
+                                            child:const Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
@@ -289,24 +292,24 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                         ],
                                       ),
 
-                                      // Divider
-                                      VerticalDivider(
+                                     
+                                    const  VerticalDivider(
                                         color:
-                                            Colors.black, // Black color divider
-                                        thickness: 1, // Divider thickness
-                                        width: 20, // Space around the divider
+                                            Colors.black, 
+                                        thickness: 1, 
+                                        width: 20, 
                                       ),
 
-                                      // CircleAvatar
-                                      CircleAvatar(
-                                        radius: 20, // Size of the avatar
+                                     
+                                    const  CircleAvatar(
+                                        radius: 20, 
                                         backgroundColor: Colors.blue,
                                         child: Icon(Icons.person,
                                             color:
-                                                Colors.white), // Avatar content
+                                                Colors.white), 
                                       ),
 
-                                      // Dropdown button
+                                    
                                       DropdownButton<String>(
                                         value: 'Name',
                                         items: <String>[
@@ -321,7 +324,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                           );
                                         }).toList(),
                                         onChanged: (String? newValue) {
-                                          // Handle dropdown selection
+                                          
                                           print('Selected: $newValue');
                                         },
                                       ),
@@ -373,33 +376,33 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Text(
+                                               const   Text(
                                                     "User Demographics",
                                                     style: TextStyle(
                                                         fontWeight: FontWeight
-                                                            .bold), // Adjusted text style
+                                                            .bold),
                                                   ),
                                                   Container(
                                                     width: widthSize / 17,
                                                     height: heightSize / 30,
                                                     alignment: Alignment
-                                                        .center, // Centering the text in the container
+                                                        .center, 
                                                     decoration: BoxDecoration(
                                                       border: Border.all(
                                                           color: Colors
-                                                              .black), // Optional: background color for data container
+                                                              .black), 
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5), // Rounded corners
+                                                              5), 
                                                     ),
-                                                    child: Row(
+                                                    child: const Row(
                                                       children: [
                                                         Icon(Icons.sort),
                                                         Text(
                                                           "filter",
                                                           style: TextStyle(
                                                               fontSize:
-                                                                  12), // Adjusted text size
+                                                                  12), 
                                                         ),
                                                       ],
                                                     ),
@@ -418,7 +421,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      child: Column(
+                                                      child:const Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .spaceEvenly,
@@ -441,7 +444,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      child: Column(
+                                                      child:const Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .spaceEvenly,
@@ -484,7 +487,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     Container(
                                                       width: widthSize / 15,
                                                       height: heightSize / 13,
-                                                      child: Column(
+                                                      child:const Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .spaceEvenly,
@@ -539,22 +542,22 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 child: LineChart(
                                                   LineChartData(
                                                     maxY:
-                                                        50, // Set the maximum value for the y-axis
+                                                        50, 
                                                     borderData: FlBorderData(
                                                       show: true,
-                                                      border: Border(
+                                                      border:const Border(
                                                         bottom: BorderSide(
                                                             color: Colors.black,
-                                                            width: 2), // X-axis
+                                                            width: 2), 
                                                         left: BorderSide(
                                                             color: Colors.black,
-                                                            width: 2), // Y-axis
+                                                            width: 2),
                                                         right: BorderSide(
                                                             color: Colors
-                                                                .transparent), // No right border
+                                                                .transparent), 
                                                         top: BorderSide(
                                                             color: Colors
-                                                                .transparent), // No top border
+                                                                .transparent), 
                                                       ),
                                                     ),
                                                     titlesData: FlTitlesData(
@@ -563,14 +566,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                         sideTitles: SideTitles(
                                                           showTitles: true,
                                                           reservedSize:
-                                                              40, // Space for labels
+                                                              40, 
                                                           getTitlesWidget:
                                                               (value, meta) {
-                                                            // Customize time intervals on the x-axis
+                                                            
                                                             switch (
                                                                 value.toInt()) {
                                                               case 0:
-                                                                return Text(
+                                                                return  Text(
                                                                     '9 to 10',
                                                                     style: TextStyle(
                                                                         fontWeight:
@@ -593,22 +596,22 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                                     style: TextStyle(
                                                                         fontWeight:
                                                                             FontWeight.bold));
-                                                              // Add more time intervals as needed
+                                                             
                                                               default:
                                                                 return Container();
                                                             }
                                                           },
                                                           interval:
-                                                              0.5, // Ensure there's a space for each hour
+                                                              0.5, 
                                                         ),
                                                       ),
                                                       leftTitles: AxisTitles(
                                                         sideTitles: SideTitles(
                                                           showTitles: true,
                                                           reservedSize:
-                                                              20, // Space for Y-axis values
+                                                              20, 
                                                           interval:
-                                                              10, // Set interval for y-axis labels
+                                                              10, 
                                                           getTitlesWidget:
                                                               (value, meta) {
                                                             return Text(
@@ -622,44 +625,34 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                           },
                                                         ),
                                                       ),
-                                                      rightTitles: AxisTitles(
-                                                        sideTitles: SideTitles(
-                                                            showTitles:
-                                                                false), // No right-side titles
-                                                      ),
-                                                      topTitles: AxisTitles(
-                                                        sideTitles: SideTitles(
-                                                            showTitles:
-                                                                false), // No top titles
-                                                      ),
+                                                      
                                                     ),
                                                     lineBarsData: [
                                                       LineChartBarData(
                                                         spots: [
                                                           FlSpot(0,
-                                                              10), // Point for x=0 (9 to 10) and y=10
+                                                              10), 
                                                           FlSpot(1,
-                                                              30), // Point for x=1 (10 to 11) and y=30
+                                                              30), 
                                                           FlSpot(2,
-                                                              20), // Point for x=2 (11 to 12) and y=20
+                                                              20), 
                                                           FlSpot(3,
-                                                              40), // Point for x=3 (12 to 1) and y=40
-                                                          // Add more points as needed
+                                                              40),
+                                                          
                                                         ],
                                                         isCurved:
-                                                            true, // Set true for a curved line
-                                                        // colors: [Colors.blue], // Line color
+                                                            true, 
                                                         dotData: FlDotData(
                                                             show:
-                                                                true), // Enable dots on points
+                                                                true), 
                                                         belowBarData: BarAreaData(
                                                             show:
-                                                                false), // Disable area below the line
+                                                                false), 
                                                       ),
                                                     ],
                                                     gridData: FlGridData(
                                                         show:
-                                                            false), // Disable grid lines
+                                                            false), 
                                                   ),
                                                 ),
                                               ),
@@ -678,49 +671,49 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           crossAxisAlignment: CrossAxisAlignment
-                                              .start, // Ensures alignment to the start
+                                              .start,
                                           children: [
-                                            // Header with title and data
+                                            
                                             Container(
                                               width: double
-                                                  .infinity, // Fill the width
+                                                  .infinity, 
                                               height: heightSize / 20,
 
-                                              padding: EdgeInsets.symmetric(
+                                              padding:const EdgeInsets.symmetric(
                                                   horizontal:
-                                                      8.0), // Padding inside the header
+                                                      8.0), 
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Text(
+                                                const  Text(
                                                     "User Demographics",
                                                     style: TextStyle(
                                                         fontWeight: FontWeight
-                                                            .bold), // Adjusted text style
+                                                            .bold), 
                                                   ),
                                                   Container(
                                                     width: widthSize / 17,
                                                     height: heightSize / 30,
                                                     alignment: Alignment
-                                                        .center, // Centering the text in the container
+                                                        .center, 
                                                     decoration: BoxDecoration(
                                                       border: Border.all(
                                                           color: Colors
-                                                              .black), // Optional: background color for data container
+                                                              .black), 
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5), // Rounded corners
+                                                              5), 
                                                     ),
-                                                    child: Row(
+                                                    child:const Row(
                                                       children: [
                                                         Icon(Icons.sort),
                                                         Text(
                                                           "filter",
                                                           style: TextStyle(
                                                               fontSize:
-                                                                  12), // Adjusted text size
+                                                                  12), 
                                                         ),
                                                       ],
                                                     ),
@@ -728,15 +721,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 ],
                                               ),
                                             ),
-                                            SizedBox(
+                                          const  SizedBox(
                                                 height:
-                                                    10), // Space between header and PieChart
-
-                                            // Expanded PieChart to fill available space
+                                                    10), 
                                             Expanded(
                                               child: Padding(
                                                 padding: const EdgeInsets.all(
-                                                    8.0), // Padding around PieChart
+                                                    8.0), 
                                                 child: PieChart(
                                                   PieChartData(
                                                     sectionsSpace: 2,
@@ -745,10 +736,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                         value: 50,
                                                         color: Colors.green,
                                                         title:
-                                                            '50%', // Optional: label for sections
+                                                            '50%', 
                                                         radius:
-                                                            150, // Increase the radius to make the chart larger
-                                                        titleStyle: TextStyle(
+                                                            150, 
+                                                        titleStyle:const TextStyle(
                                                             fontSize: 16,
                                                             fontWeight:
                                                                 FontWeight
@@ -759,8 +750,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                         color: Colors.blue,
                                                         title: '35%',
                                                         radius:
-                                                            150, // Matching the size of the sections
-                                                        titleStyle: TextStyle(
+                                                            150, 
+                                                        titleStyle:const TextStyle(
                                                             fontSize: 16,
                                                             fontWeight:
                                                                 FontWeight
@@ -771,7 +762,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                         color: Colors.purple,
                                                         title: '25%',
                                                         radius: 150,
-                                                        titleStyle: TextStyle(
+                                                        titleStyle:const TextStyle(
                                                             fontSize: 16,
                                                             fontWeight:
                                                                 FontWeight
@@ -779,7 +770,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                       ),
                                                     ],
                                                     centerSpaceRadius:
-                                                        0, // Removes the center space if not needed
+                                                        0, 
                                                   ),
                                                 ),
                                               ),
@@ -815,23 +806,22 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(
                                       left: 40,
-                                      right: 35
-                                      ), // Adjust left and right padding
+                                      right:
+                                          35), 
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(14)
-                                    ),
-                                    width: widthSize/1.3,
-                                    
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(14)),
+                                    width: widthSize / 1.3,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                      const  Padding(
+                                          padding:  EdgeInsets.symmetric(
                                               horizontal: 16),
                                           child: Text(
                                             "Revenue BreakDown",
@@ -842,76 +832,79 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                           ),
                                         ),
                                         Container(
-                                          width: widthSize/1.3, // Use double.infinity for full width
+                                          width: widthSize /
+                                              1.3, 
                                           height: heightSize / 11,
-                                          
+
                                           child: ListView.builder(
                                             scrollDirection: Axis.horizontal,
                                             itemCount: 5,
                                             itemBuilder: (context, index) {
                                               double value =
-                                                  60; // Example: current value (60%)
+                                                  60; 
                                               double remainingValue = 100 -
-                                                  value; // Remaining value (40%)
+                                                  value; 
 
                                               return Padding(
                                                 padding: const EdgeInsets
                                                     .symmetric(
-                                                    
                                                     horizontal:
-                                                        50), // Add padding for spacing between pie charts
+                                                        50), 
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
                                                     Container(
-                                                      
                                                       width: widthSize /
-                                                          16, // Reduced width of pie chart container
+                                                          16, 
                                                       height: heightSize / 10,
                                                       child: Stack(
-                                                        alignment: Alignment.center,
+                                                        alignment:
+                                                            Alignment.center,
                                                         children: [
                                                           PieChart(
                                                             PieChartData(
                                                               sectionsSpace: 0,
-                                                              centerSpaceRadius: 30,
+                                                              centerSpaceRadius:
+                                                                  30,
                                                               sections: [
-                                                                // Filled portion (e.g., 60%)
+                                                                
                                                                 PieChartSectionData(
                                                                   value: value,
-                                                                  color:
-                                                                      Colors.purple,
+                                                                  color: Colors
+                                                                      .purple,
                                                                   radius: 13,
                                                                   title: '',
                                                                 ),
-                                                                // Remaining portion (e.g., 40%)
+                                                                
                                                                 PieChartSectionData(
                                                                   value:
                                                                       remainingValue,
                                                                   color: Colors
-                                                                      .grey, // Set the color for the remaining portion
+                                                                      .grey, 
                                                                   radius: 13,
                                                                   title: '',
                                                                 ),
                                                               ],
                                                             ),
                                                           ),
-                                                          // Text placed at the center
+                                                          
                                                           Text(
-                                                            '$value%', // Display the percentage value (60%)
-                                                            style: TextStyle(
+                                                            '$value%', 
+                                                            style:const TextStyle(
                                                               fontSize: 16,
                                                               fontWeight:
-                                                                  FontWeight.bold,
-                                                              color: Colors.black,
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Colors.black,
                                                             ),
                                                           ),
-                                                          
                                                         ],
                                                       ),
                                                     ),
-                                                    Column(
+                                                   const Column(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .center,
@@ -921,8 +914,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                           style: TextStyle(
                                                             fontSize: 20,
                                                             fontWeight:
-                                                                FontWeight
-                                                                    .w600,
+                                                                FontWeight.w600,
                                                           ),
                                                         ),
                                                         Text("data"),
@@ -973,10 +965,10 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                         padding: const EdgeInsets.all(30.0),
                                         child: BarChart(
                                           BarChartData(
-                                            maxY: 50, // X-axis scale max
+                                            maxY: 50, 
                                             barGroups: [
                                               BarChartGroupData(
-                                                x: 0, // Label 0 (Revenue)
+                                                x: 0, 
                                                 barRods: [
                                                   BarChartRodData(
                                                       borderRadius:
@@ -988,7 +980,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 ],
                                               ),
                                               BarChartGroupData(
-                                                x: 1, // Label 1 (Loss)
+                                                x: 1, 
                                                 barRods: [
                                                   BarChartRodData(
                                                       borderRadius:
@@ -1000,7 +992,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 ],
                                               ),
                                               BarChartGroupData(
-                                                x: 2, // Label 2 (Profit)
+                                                x: 2, 
                                                 barRods: [
                                                   BarChartRodData(
                                                       borderRadius:
@@ -1012,7 +1004,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 ],
                                               ),
                                               BarChartGroupData(
-                                                x: 3, // Label 3 (Expenses)
+                                                x: 3, 
                                                 barRods: [
                                                   BarChartRodData(
                                                       borderRadius:
@@ -1024,26 +1016,26 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                 ],
                                               ),
                                             ],
-                                            // Remove grid lines but keep the border
-                                            gridData: FlGridData(
-                                              show: false, // Disable grid lines
+                                            
+                                            gridData:const FlGridData(
+                                              show: false, 
                                             ),
                                             borderData: FlBorderData(
                                               show:
-                                                  true, // Show only the borders (x and y axes)
-                                              border: Border(
+                                                  true, 
+                                              border:const Border(
                                                 bottom: BorderSide(
                                                     color: Colors.black,
-                                                    width: 2), // X-axis
+                                                    width: 2), 
                                                 left: BorderSide(
                                                     color: Colors.black,
-                                                    width: 2), // Y-axis
+                                                    width: 2), 
                                                 right: BorderSide(
                                                     color: Colors
-                                                        .transparent), // No right border
+                                                        .transparent), 
                                                 top: BorderSide(
                                                     color: Colors
-                                                        .transparent), // No top border
+                                                        .transparent), 
                                               ),
                                             ),
                                             titlesData: FlTitlesData(
@@ -1084,14 +1076,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     }
                                                   },
                                                   reservedSize:
-                                                      40, // Space for labels
+                                                      40, 
                                                 ),
                                               ),
                                               leftTitles: AxisTitles(
                                                 sideTitles: SideTitles(
                                                   showTitles: true,
                                                   interval:
-                                                      10, // Set interval for y-axis labels
+                                                      10, 
                                                   getTitlesWidget:
                                                       (double value,
                                                           TitleMeta meta) {
@@ -1099,29 +1091,20 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                         value
                                                             .toInt()
                                                             .toString(),
-                                                        style: TextStyle(
+                                                        style:const TextStyle(
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold));
                                                   },
                                                   reservedSize:
-                                                      40, // Space for Y-axis values
+                                                      40, 
                                                 ),
                                               ),
-                                              rightTitles: AxisTitles(
-                                                sideTitles: SideTitles(
-                                                    showTitles:
-                                                        false), // No right-side titles
-                                              ),
-                                              topTitles: AxisTitles(
-                                                sideTitles: SideTitles(
-                                                    showTitles:
-                                                        false), // No top titles
-                                              ),
+                                              
                                             ),
                                             barTouchData: BarTouchData(
                                                 enabled:
-                                                    false), // Disable touch gestures
+                                                    false), 
                                           ),
                                         ),
                                       ),
@@ -1140,8 +1123,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
+                                        const  Padding(
+                                            padding: EdgeInsets.symmetric(
                                                 horizontal: 25),
                                             child: Text(
                                               "Recent Orders",
@@ -1164,18 +1147,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     height: heightSize / 20,
                                                     child: Row(
                                                       children: [
-                                                        CircleAvatar(
+                                                      const  CircleAvatar(
                                                           radius: 32,
                                                           child: Icon(Icons
                                                               .person_2_outlined),
                                                         ),
-                                                        Column(
+                                                      const  Column(
                                                           children: [
                                                             Text("data"),
                                                             Text("data"),
                                                           ],
                                                         ),
-                                                        Spacer(),
+                                                     const   Spacer(),
                                                         Container(
                                                           width: widthSize / 25,
                                                           height:
@@ -1189,7 +1172,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                             color:
                                                                 Colors.purple,
                                                           ),
-                                                          child: Center(
+                                                          child:const Center(
                                                               child: Text(
                                                             "data",
                                                             style: TextStyle(
@@ -1197,7 +1180,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                                     .white),
                                                           )),
                                                         ),
-                                                        SizedBox(
+                                                      const  SizedBox(
                                                           width: 10,
                                                         )
                                                       ],
@@ -1223,8 +1206,8 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
+                                       const   Padding(
+                                            padding:  EdgeInsets.symmetric(
                                                 horizontal: 25),
                                             child: Text(
                                               "Revenue BreakDown",
@@ -1247,18 +1230,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                     height: heightSize / 20,
                                                     child: Row(
                                                       children: [
-                                                        CircleAvatar(
+                                                      const  CircleAvatar(
                                                           radius: 32,
                                                           child: Icon(Icons
                                                               .person_2_outlined),
                                                         ),
-                                                        Column(
+                                                       const Column(
                                                           children: [
                                                             Text("data"),
                                                             Text("data"),
                                                           ],
                                                         ),
-                                                        Spacer(),
+                                                      const  Spacer(),
                                                         Container(
                                                           width: widthSize / 25,
                                                           height:
@@ -1272,7 +1255,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                             color:
                                                                 Colors.purple,
                                                           ),
-                                                          child: Center(
+                                                          child:const Center(
                                                               child: Text(
                                                             "data",
                                                             style: TextStyle(
@@ -1280,7 +1263,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                                                     .white),
                                                           )),
                                                         ),
-                                                        SizedBox(
+                                                      const  SizedBox(
                                                           width: 10,
                                                         )
                                                       ],
